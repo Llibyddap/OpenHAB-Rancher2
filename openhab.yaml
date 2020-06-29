@@ -1,0 +1,245 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "6"
+    field.cattle.io/creatorId: user-89db8
+    field.cattle.io/publicEndpoints: '[{"nodeName":"c-jxthh:m-12348520c6d2","addresses":["192.168.2.81"],"port":8081,"protocol":"TCP","podName":"armstronghab:openhab-668d88779f-mh8lv","allNodes":false},{"nodeName":"c-jxthh:m-12348520c6d2","addresses":["192.168.2.81"],"port":8444,"protocol":"TCP","podName":"armstronghab:openhab-668d88779f-mh8lv","allNodes":false},{"nodeName":"c-jxthh:m-12348520c6d2","addresses":["192.168.2.81"],"port":9110,"protocol":"TCP","podName":"armstronghab:openhab-668d88779f-mh8lv","allNodes":false}]'
+  creationTimestamp: null
+  generation: 1
+  labels:
+    cattle.io/creator: norman
+    workload.user.cattle.io/workloadselector: deployment-armstronghab-openhab
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:field.cattle.io/creatorId: {}
+          f:field.cattle.io/publicEndpoints: {}
+        f:labels:
+          .: {}
+          f:cattle.io/creator: {}
+          f:workload.user.cattle.io/workloadselector: {}
+      f:spec:
+        f:progressDeadlineSeconds: {}
+        f:replicas: {}
+        f:revisionHistoryLimit: {}
+        f:selector:
+          f:matchLabels:
+            .: {}
+            f:workload.user.cattle.io/workloadselector: {}
+        f:strategy:
+          f:rollingUpdate:
+            .: {}
+            f:maxSurge: {}
+            f:maxUnavailable: {}
+          f:type: {}
+        f:template:
+          f:metadata:
+            f:annotations:
+              .: {}
+              f:cattle.io/timestamp: {}
+              f:field.cattle.io/ports: {}
+              f:field.cattle.io/publicEndpoints: {}
+            f:labels:
+              .: {}
+              f:workload.user.cattle.io/workloadselector: {}
+          f:spec:
+            f:containers:
+              k:{"name":"openhab"}:
+                .: {}
+                f:env:
+                  .: {}
+                  k:{"name":"EXTRA_JAVA_OPTS"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"GROUP_ID"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                  k:{"name":"USER_ID"}:
+                    .: {}
+                    f:name: {}
+                    f:value: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:ports:
+                  .: {}
+                  k:{"containerPort":8080,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:hostPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                  k:{"containerPort":8443,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:hostPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                  k:{"containerPort":9110,"protocol":"TCP"}:
+                    .: {}
+                    f:containerPort: {}
+                    f:hostPort: {}
+                    f:name: {}
+                    f:protocol: {}
+                f:resources: {}
+                f:securityContext:
+                  .: {}
+                  f:allowPrivilegeEscalation: {}
+                  f:privileged: {}
+                  f:readOnlyRootFilesystem: {}
+                  f:runAsNonRoot: {}
+                f:stdin: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+                f:tty: {}
+                f:volumeMounts:
+                  .: {}
+                  k:{"mountPath":"/openhab/addons"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+                  k:{"mountPath":"/openhab/conf"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+                  k:{"mountPath":"/openhab/userdata"}:
+                    .: {}
+                    f:mountPath: {}
+                    f:name: {}
+                    f:subPath: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+            f:volumes:
+              .: {}
+              k:{"name":"chaos-armstronghab-openhab"}:
+                .: {}
+                f:name: {}
+                f:persistentVolumeClaim:
+                  .: {}
+                  f:claimName: {}
+    manager: Go-http-client
+    operation: Update
+    time: "2020-06-28T23:16:09Z"
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          f:deployment.kubernetes.io/revision: {}
+      f:status:
+        f:availableReplicas: {}
+        f:conditions:
+          .: {}
+          k:{"type":"Available"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+          k:{"type":"Progressing"}:
+            .: {}
+            f:lastTransitionTime: {}
+            f:lastUpdateTime: {}
+            f:message: {}
+            f:reason: {}
+            f:status: {}
+            f:type: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+        f:updatedReplicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2020-06-28T23:17:41Z"
+  name: openhab
+  selfLink: /apis/apps/v1/namespaces/armstronghab/deployments/openhab
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-armstronghab-openhab
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        cattle.io/timestamp: "2020-06-28T19:37:52Z"
+        field.cattle.io/ports: '[[{"containerPort":8080,"dnsName":"openhab-hostport","hostPort":8081,"kind":"HostPort","name":"ui","protocol":"TCP","sourcePort":8081},{"containerPort":8443,"dnsName":"openhab-hostport","hostPort":8444,"kind":"HostPort","name":"secureui","protocol":"TCP","sourcePort":8444},{"containerPort":9110,"dnsName":"openhab-hostport","hostPort":9110,"kind":"HostPort","name":"log","protocol":"TCP","sourcePort":9110}]]'
+        field.cattle.io/publicEndpoints: '[{"addresses":["192.168.2.81"],"nodeId":"c-jxthh:m-12348520c6d2","port":8081,"protocol":"TCP"},{"addresses":["192.168.2.81"],"nodeId":"c-jxthh:m-12348520c6d2","port":8444,"protocol":"TCP"},{"addresses":["192.168.2.81"],"nodeId":"c-jxthh:m-12348520c6d2","port":9110,"protocol":"TCP"}]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-armstronghab-openhab
+    spec:
+      containers:
+      - env:
+        - name: EXTRA_JAVA_OPTS
+          value: -Duser.timezone=America/Los_Angeles
+        - name: GROUP_ID
+          value: "2000"
+        - name: USER_ID
+          value: "2000"
+        image: openhab/openhab:2.5.6
+        imagePullPolicy: Always
+        name: openhab
+        ports:
+        - containerPort: 8080
+          hostPort: 8081
+          name: ui
+          protocol: TCP
+        - containerPort: 8443
+          hostPort: 8444
+          name: secureui
+          protocol: TCP
+        - containerPort: 9110
+          hostPort: 9110
+          name: log
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /openhab/addons
+          name: chaos-armstronghab-openhab
+          subPath: ArmstrongHAB/openhab/addons
+        - mountPath: /openhab/conf
+          name: chaos-armstronghab-openhab
+          subPath: ArmstrongHAB/openhab/conf
+        - mountPath: /openhab/userdata
+          name: chaos-armstronghab-openhab
+          subPath: ArmstrongHAB/openhab/userdata
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: chaos-armstronghab-openhab
+        persistentVolumeClaim:
+          claimName: chaos-armstronghab
+status: {}
